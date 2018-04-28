@@ -36,7 +36,7 @@ Our best IoU score is 0.79. We obtained a mean of the average precision in 5 fol
 
 
 ## License
-LGPL-3.0. See [LICENSE](https://github.com/dsp-uga/kampf/blob/master/LICENSE) for details.
+LGPL-3.0. See [LICENSE](https://github.com/dsp-uga/team-Bioinfor-final/blob/master/LICENSE) for details.
 
 ## References
 https://github.com/choosehappy/public/tree/master/DL%20tutorial%20Code
