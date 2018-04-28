@@ -7,14 +7,14 @@ cd images
 while read line
 	do
 		python ../utils/mergeMask.py $line
-	done<../utils/train.txt
+	done<../train.txt
 
 
 ##cut image into 32*32, and label them as background, edge, and positive.
-matlab -nodisplay < make_patches.m > matlab_step1.out
+matlab -nodisplay < utils/make_patches.m > matlab_step1.out
 
 ## create the database for 5 fold validation
-matlab -nodisplay < make_training_lists.m > matlab_step2.out
+matlab -nodisplay < utils/make_training_lists.m > matlab_step2.out
 
 ##prepare the traning and testing data
 cd subs/
@@ -29,7 +29,7 @@ cd models
 ~/Downloads/caffe/build/tools/caffe train --solver=./1-alexnet_solver_ada.prototxt &
 
 ##prediction
-Python create_output_images_kfold.py data/ 1 &
+Python ../utils/create_output_images_kfold.py data/ 1 &
 
 ##compute IoU score
-python IoU.py [SampleName]
+python ../utils/IoU.py [SampleName]
